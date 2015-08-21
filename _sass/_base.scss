@@ -1,0 +1,230 @@
+/**
+ * Basic styling
+ */
+html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    margin: 0;
+    font-family: $serif-font-family;
+    font-size: $base-font-size;
+    line-height: $base-line-height;
+    font-weight: 400;
+    color: $text-color;
+    background-color: $background-color;
+}
+
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre,
+ul, ol, dl, figure {
+    margin: 0;
+    padding: 0;
+}
+
+/**
+ * Set `margin-bottom` to maintain vertical rhythm
+ */
+p, blockquote, pre,
+ul, ol, dl, figure, table,
+%vertical-rhythm {
+	margin-bottom: $vertical-unit;
+}
+
+/**
+ * Images
+ */
+img {
+    height: auto;
+    max-width: 100%;
+    border: 0;
+    vertical-align: middle;
+}
+
+iframe {
+	border: 0;
+}
+
+/**
+ * Figures
+ */
+figure {
+	display: table;
+}
+
+figure > img {
+    display: block;
+}
+
+figcaption {
+	display: table-caption;
+	caption-side: bottom;
+    font-size: $small-font-size;
+}
+
+/**
+ * Lists
+ */
+ol, ul { }
+
+ul {
+	list-style: none;
+}
+
+li {
+    > ul,
+    > ol {
+         margin-bottom: 0;
+    }
+}
+
+li audio {
+	display: block;
+}
+
+/**
+ * Headings
+ */
+h1, h2, h3, h4, h5, h6 {
+    font-family: $sans-font-family;
+    font-weight: 900;
+	letter-spacing: 1px;
+}
+
+h1 {
+	font-size: $vertical-unit + 4;
+	margin-bottom: $vertical-unit;
+}
+
+h2 {
+	font-size: $vertical-unit;
+	margin-bottom: $vertical-unit;
+}
+
+h3 {
+	font-size: $vertical-unit - 4;
+}
+
+h4, h5, h6 {
+	font-size: $base-font-size;
+}
+
+/**
+ * Links
+ */
+a {
+    color: $brand-color;
+    text-decoration: none;
+
+    &:visited {
+    }
+
+    &:hover {
+    }
+}
+
+/**
+ * Blockquotes
+ */
+blockquote {
+    color: $grey-color;
+	margin: 0 0 $vertical-unit 0;
+    padding: 0 $horizontal-unit;
+
+    > :last-child {
+        margin-bottom: 0;
+    }
+}
+
+blockquote::before { 
+    content: "“";
+	float: left;
+	margin: $base-font-size $horizontal-unit * -1.5;
+	font-size: $base-font-size * 5;
+    color: $brand-color;
+}
+
+blockquote::after { 
+    content: "”";
+	float: right;
+	margin: 0 $horizontal-unit * -1.5;
+	font-size: $base-font-size * 5;
+    color: $brand-color;
+}
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+/**
+ * Code formatting
+ */
+pre,
+code {
+    font-size: 12px;
+    border: 1px dotted $brand-color;
+    border-radius: 3px;
+    background-color: $brand-color-light;
+}
+
+code {
+    padding: 1px 5px;
+	vertical-align: bottom;
+}
+
+pre {
+    padding: 8px 12px;
+    overflow-x: scroll;
+
+    > code {
+        border: 0;
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
+
+/**
+ * Tables
+ */
+
+td,
+th {
+	margin: 0;
+	padding: 5px;
+}
+
+/**
+ * Font Awesome
+ */
+.fa span {
+	display: none;
+}
+
+/**
+ * Mixins
+ */
+@mixin modern-type() {
+	text-transform: uppercase;
+    font-family: $sans-font-family;
+	font-weight: 300;
+	letter-spacing: 1px;
+}

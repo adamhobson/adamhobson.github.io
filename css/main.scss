@@ -1,0 +1,33 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+
+// Our variables
+$horizontal-unit:   30px;
+$vertical-unit:     24px;
+
+$serif-font-family: 'Lora', serif;
+$sans-font-family:  'Lato', sans-serif;
+$mono-font-family:  'Andale Mono', 'Consolas', monospace;
+$base-font-size:    16px;
+$small-font-size:   $base-font-size - 4;
+$base-line-height:  $vertical-unit;
+
+$background-color:  #fff;
+$text-color:        #404040;
+
+$brand-color:       #c91a00;
+$brand-color-light: #fee;
+$brand-color-dark:  darken($brand-color, 25%);
+
+$grey-color:        #7f7f7f;
+$grey-color-light:  lighten($grey-color, 40%);
+$grey-color-dark:   darken($grey-color, 25%);
+
+// Import partials from `sass_dir` (defaults to `_sass`)
+@import
+	"base",
+	"layout",
+	"syntax-highlighting"
+;

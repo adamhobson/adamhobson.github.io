@@ -1,0 +1,31 @@
+		<nav class="site">
+			<ul class="pages">
+				<li><a href="{{ '/about/' |  prepend: site.baseurl }}">About</a></li>
+				<li><a href="{{ '/changelog/' |  prepend: site.baseurl }}">Change Log</a></li>
+				<li><a href="{{ '/colophon/' |  prepend: site.baseurl }}">Colophon</a></li>
+			</ul>
+						
+			<ul class="categories">
+				{% for category in site.categories | limit:5 %}
+				<li><a href="{{ category | first | downcase | prepend: '/' | prepend: site.baseurl }}/">{{ category | first | replace: '-',' ' }}</a></li>
+				{% endfor %}
+			</ul>
+
+			<ul class="social">
+				<li><a class="fa fa-twitter" href="https://twitter.com/adamhobson"><span>Twitter</span></a></li>
+				<li><a class="fa fa-linkedin" href="https://www.linkedin.com/in/adamhobson"><span>LinkedIn</span></a></li>
+				<li><a class="fa fa-github" href="https://github.com/adamhobson"><span>GitHub</span></a></li>
+				<li><a class="fa fa-stack-exchange" href="http://stackexchange.com/users/491283/adam-hobson"><span>Stack Exchange</span></a></li>
+				<li><a class="fa fa-stack-overflow" href="https://careers.stackoverflow.com/adamhobson"><span>Stack Overflow</span></a></li>
+			</ul>
+		</nav>
+
+		<footer class="footer">
+			<div class="copyright">
+				<a href="{{ '/license/' |  prepend: site.baseurl }}">&copy; 2006-{{ 'now' | date: "%Y" }} Adam Hobson</a>
+			</div>
+				
+			<div class="feeds">
+				<a class="fa fa-rss" href="{{ '/feed.xml' |  prepend: site.baseurl }}"><span>Feed</span></a>
+			</div>
+		</footer>

@@ -1,3 +1,18 @@
+---
+title: "License"
+permalink: /license/
+---
+
+## Design
+
+The design of this website is copyright &copy; 2015 Adam Hobson, all rights reserved.
+
+## Content <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">![Creative Commons License](https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png)</a>
+
+The content of this website by <a xmlns:cc="http://creativecommons.org/ns#" href="http://adamhobson.com" property="cc:attributionName" rel="cc:attributionURL">Adam Hobson</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.
+
+## Code
+
 The MIT License (MIT)
 
 Copyright (c) 2015 Adam Hobson
