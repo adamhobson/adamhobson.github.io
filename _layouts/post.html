@@ -1,42 +1,42 @@
 ---
 layout: default
 type: post
----		
-		<article id="post" class="post">
-			<header>
-				<a class="category" href="{{ page.category | downcase | prepend: '/' | prepend: site.baseurl }}/">{{ page.category }}</a>
-				<time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+---     
+        <article id="post" class="post">
+            <header>
+                <a class="category" href="/{{ page.category | downcase }}/">{{ page.category | replace: '-',' ' }}</a>
+                <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
 
-				<h1><a href="{{ page.url }}">{{ page.title | markdownify | remove: '<p>' | remove: '</p>' }}</a></h1>
-			</header>
+                <h1><a href="{{ page.url }}">{{ page.title | markdownify | remove: '<p>' | remove: '</p>' }}</a></h1>
+            </header>
 
-			<div class="body">
-				{{ content }}
-			</div>
-			
-			<footer>
-				<nav class="siblings">
-					{% if page.previous.url %}
-					<h2>&#8592; Previous Article</h2>
-					<a class="prev" href="{{ page.previous.url }}">{{ page.previous.title | markdownify | remove: '<p>' | remove: '</p>' }}</a>
-					<br /><br />
-					{% endif %} 
-					{% if page.next.url %} 
-					<h2>Next Article &#8594;</h2>
-					<a class="next" href="{{ page.next.url }}">{{ page.next.title | markdownify | remove: '<p>' | remove: '</p>' }}</a> 
-					{% endif %} 
-				</nav>
+            <div class="body">
+                {{ content }}
+            </div>
+            
+            <footer>
+                <nav class="siblings">
+                    {% if page.previous.url %}
+                    <h2>&#8592; Previous Article</h2>
+                    <a class="prev" href="{{ page.previous.url }}">{{ page.previous.title | markdownify | remove: '<p>' | remove: '</p>' }}</a>
+                    <br /><br />
+                    {% endif %} 
+                    {% if page.next.url %} 
+                    <h2>Next Article &#8594;</h2>
+                    <a class="next" href="{{ page.next.url }}">{{ page.next.title | markdownify | remove: '<p>' | remove: '</p>' }}</a> 
+                    {% endif %} 
+                </nav>
 
-				<div class="related">
-					<h2>Related Articles</h2>
-					<ul>
-					{% assign category = page.category | downcase %}
-					{% for post in site.categories[category] | limit:5 %}
-						<li>
-							<a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title | markdownify | remove: '<p>' | remove: '</p>' }}</a>
-						</li>
-					{% endfor %}
-					</ul>
-				</div>			
-			</footer>
-		</article>
+                <div class="related">
+                    <h2>Related Articles</h2>
+                    <ul>
+                    {% assign category = page.category | downcase %}
+                    {% for post in site.categories[category] | limit:5 %}
+                        <li>
+                            <a class="post-link" href="{{ post.url }}">{{ post.title | markdownify | remove: '<p>' | remove: '</p>' }}</a>
+                        </li>
+                    {% endfor %}
+                    </ul>
+                </div>          
+            </footer>
+        </article>

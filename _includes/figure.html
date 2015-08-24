@@ -1,7 +1,7 @@
 <figure class="{{ include.class }}">
-	<img src="{{ include.src | prepend: site.imgurl }}" alt="{{ include.caption }}" />
+    <img src="{{ include.src | prepend: '/posts/' | prepend: site.imgurl }}" alt="{{ include.caption }}" />
 
-	<figcaption>
-		{{ include.caption | markdownify  | remove: '<p>' | remove: '</p>' }}
-	</figcaption>
+    <figcaption>
+        {{ include.caption | markdownify  | remove: '<p>' | remove: '</p>' }}
+    </figcaption>
 </figure>

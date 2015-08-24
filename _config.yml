@@ -1,10 +1,10 @@
 # Site settings
-title: Adam Hobson
-email: adam@adamhobson.com
-description: Saving the World Since 1984
-baseurl: "" 					# the subpath of your site, e.g. /blog/
-url: "http://adamhobson.com"	# the base hostname & protocol for your site
-imgurl: "/images/posts/"
+title: "Adam Hobson"
+author: "Adam Hobson"
+email: "adam@adamhobson.com"
+description: "Saving the World Since 1984"
+url: "http://adamhobson.com"                # the base hostname & protocol for your site
+imgurl: "/images"
 
 # Plugins
 gems:
@@ -12,30 +12,30 @@ gems:
 - jekyll-redirect-from
 - jekyll-sitemap
 
+# Outputting
+permalink: /:year/:month/:day/:title
+timezone: America/New_York
+
 # Conversion
 markdown: kramdown
 highlighter: pygments
 excerpt_separator: "\n\n"
 
-# Outputting
-permalink: /:year/:month/:day/:title/
-timezone: America/New_York
-
 # Markdown Processors
 kramdown:
-  input: GFM
+    input: GFM
 
 # Defaults
 defaults:
 -
-  scope:
-    path: ""
-    type: "posts"
-  values:
-    layout: "post"
+    scope:
+        path: ""
+        type: "posts"
+    values:
+        layout: "post"
 -
-  scope:
-    path: ""
-    type: "pages"
-  values:
-    layout: "page"
+    scope:
+        path: ""
+        type: "pages"
+    values:
+        layout: "page"

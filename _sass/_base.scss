@@ -31,7 +31,7 @@ ul, ol, dl, figure {
 p, blockquote, pre,
 ul, ol, dl, figure, table,
 %vertical-rhythm {
-	margin-bottom: $vertical-unit;
+    margin-bottom: $vertical-unit;
 }
 
 /**
@@ -39,20 +39,22 @@ ul, ol, dl, figure, table,
  */
 img {
     height: auto;
+}
+
+iframe,
+img,
+svg {
+    border: 0;
     max-width: 100%;
     border: 0;
     vertical-align: middle;
-}
-
-iframe {
-	border: 0;
 }
 
 /**
  * Figures
  */
 figure {
-	display: table;
+    display: table;
 }
 
 figure > img {
@@ -60,8 +62,8 @@ figure > img {
 }
 
 figcaption {
-	display: table-caption;
-	caption-side: bottom;
+    display: table-caption;
+    caption-side: bottom;
     font-size: $small-font-size;
 }
 
@@ -71,7 +73,7 @@ figcaption {
 ol, ul { }
 
 ul {
-	list-style: none;
+    list-style: none;
 }
 
 li {
@@ -82,7 +84,7 @@ li {
 }
 
 li audio {
-	display: block;
+    display: block;
 }
 
 /**
@@ -91,25 +93,25 @@ li audio {
 h1, h2, h3, h4, h5, h6 {
     font-family: $sans-font-family;
     font-weight: 900;
-	letter-spacing: 1px;
+    letter-spacing: 1px;
 }
 
 h1 {
-	font-size: $vertical-unit + 4;
-	margin-bottom: $vertical-unit;
+    font-size: $vertical-unit + 4;
+    margin-bottom: $vertical-unit;
 }
 
 h2 {
-	font-size: $vertical-unit;
-	margin-bottom: $vertical-unit;
+    font-size: $vertical-unit;
+    margin-bottom: $vertical-unit;
 }
 
 h3 {
-	font-size: $vertical-unit - 4;
+    font-size: $vertical-unit - 4;
 }
 
 h4, h5, h6 {
-	font-size: $base-font-size;
+    font-size: $base-font-size;
 }
 
 /**
@@ -122,7 +124,9 @@ a {
     &:visited {
     }
 
+    &:active,
     &:hover {
+        color: $brand-color-dark;
     }
 }
 
@@ -131,7 +135,7 @@ a {
  */
 blockquote {
     color: $grey-color;
-	margin: 0 0 $vertical-unit 0;
+    margin: 0 0 $vertical-unit 0;
     padding: 0 $horizontal-unit;
 
     > :last-child {
@@ -141,17 +145,17 @@ blockquote {
 
 blockquote::before { 
     content: "“";
-	float: left;
-	margin: $base-font-size $horizontal-unit * -1.5;
-	font-size: $base-font-size * 5;
+    float: left;
+    margin: $base-font-size $horizontal-unit * -1.5;
+    font-size: $base-font-size * 5;
     color: $brand-color;
 }
 
 blockquote::after { 
     content: "”";
-	float: right;
-	margin: 0 $horizontal-unit * -1.5;
-	font-size: $base-font-size * 5;
+    float: right;
+    margin: 0 $horizontal-unit * -1.5;
+    font-size: $base-font-size * 5;
     color: $brand-color;
 }
 
@@ -188,7 +192,7 @@ code {
 
 code {
     padding: 1px 5px;
-	vertical-align: bottom;
+    vertical-align: bottom;
 }
 
 pre {
@@ -208,23 +212,25 @@ pre {
 
 td,
 th {
-	margin: 0;
-	padding: 5px;
+    margin: 0;
+    padding: 5px;
 }
 
 /**
- * Font Awesome
+ * Icons
  */
-.fa span {
-	display: none;
+.icon {
+    height: 1em;
+    width: 1em;
+    fill: currentColor;
 }
 
 /**
  * Mixins
  */
 @mixin modern-type() {
-	text-transform: uppercase;
+    text-transform: uppercase;
     font-family: $sans-font-family;
-	font-weight: 300;
-	letter-spacing: 1px;
+    font-weight: 300;
+    letter-spacing: 1px;
 }
