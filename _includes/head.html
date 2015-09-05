@@ -3,7 +3,7 @@
         <meta name="viewport" content="width=device-width initial-scale=1" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-        <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+        <title>{% if page.title %}{{ page.title | remove: '_' }} | {% endif %}{{ site.title }}</title>
         <meta name="description" content="{{ site.description }}" />
 
         <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?{{ 'family=Lato:300,900|Lora:400,700,400italic,700italic' | uri_escape }}" />

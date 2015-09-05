@@ -44,7 +44,6 @@ img {
 iframe,
 img,
 svg {
-    border: 0;
     max-width: 100%;
     border: 0;
     vertical-align: middle;
@@ -55,10 +54,10 @@ svg {
  */
 figure {
     display: table;
-}
 
-figure > img {
-    display: block;
+    > img {
+        display: block;
+    }
 }
 
 figcaption {
@@ -81,10 +80,10 @@ li {
     > ol {
          margin-bottom: 0;
     }
-}
 
-li audio {
-    display: block;
+    audio {
+       display: block;
+    }
 }
 
 /**
@@ -120,6 +119,7 @@ h4, h5, h6 {
 a {
     color: $brand-color;
     text-decoration: none;
+    transition: all ease-in-out 0.3s;
 
     &:visited {
     }
@@ -141,22 +141,26 @@ blockquote {
     > :last-child {
         margin-bottom: 0;
     }
-}
 
-blockquote::before { 
-    content: "“";
-    float: left;
-    margin: $base-font-size $horizontal-unit * -1.5;
-    font-size: $base-font-size * 5;
-    color: $brand-color;
-}
+    &::before { 
+        content: "\201C";
+        float: left;
+        margin: $base-font-size $horizontal-unit * -1.5;
+        font-size: $base-font-size * 5;
+        color: $brand-color;
+    }
 
-blockquote::after { 
-    content: "”";
-    float: right;
-    margin: 0 $horizontal-unit * -1.5;
-    font-size: $base-font-size * 5;
-    color: $brand-color;
+    &::after { 
+        content: "\201D";
+        float: right;
+        margin: 0 $horizontal-unit * -1.5;
+        font-size: $base-font-size * 5;
+        color: $brand-color;
+    }
+
+    cite::before { 
+        content: "–";
+    }
 }
 
 /**
@@ -185,13 +189,13 @@ sub {
 pre,
 code {
     font-size: 12px;
-    border: 1px dotted $brand-color;
     border-radius: 3px;
     background-color: $brand-color-light;
 }
 
 code {
-    padding: 1px 5px;
+    margin: -2px -2px;
+    padding: 2px 2px;
     vertical-align: bottom;
 }
 

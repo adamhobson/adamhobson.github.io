@@ -11,6 +11,11 @@ type: post
             </header>
 
             <div class="body">
+                {% if page.source %}
+                    {% capture callout_content %}This post was originally published <a href="{{ page.source }}">elsewhere</a>.{% endcapture %}
+                    {% include callout.html type="external" content=callout_content %}
+                {% endif %}
+
                 {{ content }}
             </div>
             

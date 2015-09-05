@@ -1,7 +1,22 @@
 <figure class="{{ include.class }}">
-    <img src="{{ include.src | prepend: '/posts/' | prepend: site.imgurl }}" alt="{{ include.caption }}" />
+{% assign srcs = include.src | split: " " %}
+{% if include.alt %}
+    {% assign alts = include.alt | split: "|" %}
+{% endif %}
 
+{% for src in srcs %}
+    {% if alts[forloop.index0] %}
+        {% assign alt = alts[forloop.index0] %}
+    {% else %}
+        {% assign alt = include.caption %}
+    {% endif %}
+
+    <img src="{{ src | prepend: '/posts/' | prepend: site.imgurl }}"{% if alt %} alt="{{ alt | escape }}"{% endif %} />
+{% endfor %}
+
+{% if include.caption %}
     <figcaption>
         {{ include.caption | markdownify  | remove: '<p>' | remove: '</p>' }}
     </figcaption>
+{% endif %}
 </figure>

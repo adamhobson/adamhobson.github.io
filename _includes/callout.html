@@ -1,0 +1,5 @@
+<div class="callout {{ include.type }}">
+    <svg class="icon icon-{{ include.type }}"><use xlink:href="{{ site.imgurl }}/icons.svg#icon-{{ include.type }}"></use></svg>
+
+    {{ include.content | markdownify }}
+</div>
