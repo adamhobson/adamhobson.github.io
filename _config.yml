@@ -44,3 +44,7 @@ defaults:
         type: "pages"
     values:
         layout: "page"
+
+# Default extension for new posts and pages
+post_ext: md
+page_ext: md
