@@ -1,13 +1,18 @@
 # Site settings
 title: "Adam Hobson"
-author: "Adam Hobson"
-email: "adam@adamhobson.com"
+name: "Adam Hobson"                         # Needed until Issue #47 is fixed
+author:
+    name: "Adam Hobson"
+    email: "adam@adamhobson.com"
+    uri: "http://adamhobson.com/about/"
 description: "Saving the World Since 1984"
-url: "http://adamhobson.com"                # the base hostname & protocol for your site
+url: "http://adamhobson.com"
 imgurl: "/images"
 
 # Plugins
 gems:
+- jekyll-feed
+#- jekyll-last-modified-at
 - jekyll-mentions
 - jekyll-redirect-from
 - jekyll-sitemap
