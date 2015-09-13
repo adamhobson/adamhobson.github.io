@@ -12,7 +12,7 @@ imgurl: "/images"
 # Plugins
 gems:
 - jekyll-feed
-#- jekyll-last-modified-at
+- jekyll-last-modified-at
 - jekyll-mentions
 - jekyll-redirect-from
 - jekyll-sitemap
