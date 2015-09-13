@@ -1,6 +1,6 @@
 # Site settings
 title: "Adam Hobson"
-name: "Adam Hobson"                         # Needed until Issue #47 is fixed
+name: "Adam Hobson"                         # Needed until Issue #47 is fixed in jekyll-sitemap
 author:
     name: "Adam Hobson"
     email: "adam@adamhobson.com"
@@ -13,7 +13,6 @@ imgurl: "/images"
 gems:
 - jekyll-feed
 - jekyll-last-modified-at
-- jekyll-mentions
 - jekyll-redirect-from
 - jekyll-sitemap
 
@@ -29,6 +28,11 @@ excerpt_separator: "\n\n"
 # Markdown Processors
 kramdown:
     input: GFM
+
+# SASS
+sass:
+    sass_dir: /_sass
+    style: compact
 
 # Defaults
 defaults:

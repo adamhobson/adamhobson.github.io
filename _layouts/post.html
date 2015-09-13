@@ -36,7 +36,7 @@ type: post
                     <h2>Related Articles</h2>
                     <ul>
                     {% assign category = page.category | downcase %}
-                    {% for post in site.categories[category] | limit:5 %}
+                    {% for post in site.categories[category] limit:5 %}
                         <li>
                             <a class="post-link" href="{{ post.url }}">{{ post.title | markdownify | remove: '<p>' | remove: '</p>' }}</a>
                         </li>

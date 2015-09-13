@@ -2,6 +2,7 @@
 _site/
 _archive/
 .sass-cache/
+.jekyll-metadata
 
 # Mac
 .DS_Store

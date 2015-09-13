@@ -1,6 +1,6 @@
 ---
 title: "License"
-permalink: /license/
+permalink: /license
 ---
 
 ## Design
