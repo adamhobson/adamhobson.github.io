@@ -11,10 +11,11 @@ imgurl: "/images"
 
 # Plugins
 gems:
-- jekyll-feed
-- jekyll-last-modified-at
-- jekyll-redirect-from
-- jekyll-sitemap
+  - jekyll-archives
+  - jekyll-feed
+  - jekyll-last-modified-at
+  - jekyll-redirect-from
+  - jekyll-sitemap
 
 # Outputting
 permalink: /:year/:month/:day/:title
@@ -36,17 +37,28 @@ sass:
 
 # Defaults
 defaults:
--   scope:
+  - scope:
         path: ""
         type: "posts"
     values:
         layout: "post"
--   scope:
+  - scope:
         path: ""
         type: "pages"
     values:
         layout: "page"
 
-# Default extension for new posts and pages
+# Jekyll Archives
+jekyll-archives:
+    enabled:
+      - year
+      - month
+      - day 
+      - categories
+    layout: 'archive'
+    permalinks:
+        category: '/:name.html'
+
+# Octopress
 post_ext: md
 page_ext: md

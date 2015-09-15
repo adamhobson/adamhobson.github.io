@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/jekyll/jekyll-archives.git
+  revision: c9eac2c729bb3f8e3821bbaf529bd53cb5e7da66
+  specs:
+    jekyll-archives (2.0.0)
+      jekyll (>= 2.4)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -62,6 +69,7 @@ PLATFORMS
 
 DEPENDENCIES
   jekyll (~> 3.0.beta)
+  jekyll-archives!
   jekyll-feed
   jekyll-last-modified-at
   jekyll-redirect-from
