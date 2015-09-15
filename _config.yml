@@ -36,14 +36,12 @@ sass:
 
 # Defaults
 defaults:
--
-    scope:
+-   scope:
         path: ""
         type: "posts"
     values:
         layout: "post"
--
-    scope:
+-   scope:
         path: ""
         type: "pages"
     values:

@@ -1,58 +1,34 @@
         <nav class="site">
             <ul class="pages">
-                <li><a href="/about/">About</a></li>
-                <li><a href="/changelog/">Change Log</a></li>
-                <li><a href="/colophon/">Colophon</a></li>
+            {% for nav_page in site.pages %}
+                {% if nav_page.main  == true %}
+                <li><a href="{{ nav_page.url }}">{{ nav_page.title }}</a></li>
+                {% endif %}
+            {% endfor %}
             </ul>
                         
             <ul class="categories">
-                {% for category in site.categories %}
-                <li><a href="/{{ category | first | downcase }}/">{{ category | first | capitalize | replace: '-',' ' }}</a></li>
-                {% endfor %}
+            {% for category in site.categories %}
+                <li><a href="/{{ category | first | downcase }}">{{ category | first | capitalize | replace: '-',' ' }}</a></li>
+            {% endfor %}
             </ul>
             
             <ul class="social">
+            {% for social in site.data.social %}
                 <li>
-                    <a href="https://twitter.com/adamhobson">
-                        <svg class="icon icon-twitter"><use xlink:href="{{ site.imgurl }}/icons.svg#icon-twitter"></use></svg>
+                    <a href="{{ social.url }}">
+                        <svg class="icon icon-{{ social.name | slugify }}">
+                            <use xlink:href="{{ site.imgurl }}/icons.svg#icon-{{ social.name | slugify }}"></use>
+                        </svg>
                     </a>
                 </li>
-                <li>
-                    <a href="https://www.linkedin.com/in/adamhobson">
-                        <svg class="icon icon-linkedin"><use xlink:href="{{ site.imgurl }}/icons.svg#icon-linkedin"></use></svg>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://github.com/adamhobson">
-                        <svg class="icon icon-github"><use xlink:href="{{ site.imgurl }}/icons.svg#icon-github"></use></svg>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://makerba.se/m/86o68c/adamhobson">
-                        <svg class="icon icon-makerbase"><use xlink:href="{{ site.imgurl }}/icons.svg#icon-makerbase"></use></svg>
-                    </a>
-                </li>
-                <li>
-                    <a href="http://stackexchange.com/users/491283/adam-hobson">
-                        <svg class="icon icon-stack-exchange"><use xlink:href="{{ site.imgurl }}/icons.svg#icon-stack-exchange"></use></svg>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://careers.stackoverflow.com/adamhobson">
-                        <svg class="icon icon-stack-overflow"><use xlink:href="{{ site.imgurl }}/icons.svg#icon-stack-overflow"></use></svg>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.pinterest.com/thesonofhob/">
-                        <svg class="icon icon-pinterest"><use xlink:href="{{ site.imgurl }}/icons.svg#icon-pinterest"></use></svg>
-                    </a>
-                </li>
+            {% endfor %}
             </ul>
         </nav>
 
         <footer class="footer">
             <div class="copyright">
-                <a href="/license/">&copy; 2006&ndash;{{ 'now' | date: "%Y" }} Adam Hobson</a>
+                <a href="/license">&copy; 2006&ndash;{{ 'now' | date: "%Y" }} Adam Hobson</a>
             </div>
                 
             <div class="feeds">

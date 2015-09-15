@@ -1,6 +1,7 @@
 ---
 title: "Colophon"
 permalink: /colophon
+main: true
 ---
 
 ## noCMS

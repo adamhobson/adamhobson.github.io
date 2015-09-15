@@ -4,7 +4,7 @@ type: post
 ---     
         <article id="post" class="post">
             <header>
-                <a class="category" href="/{{ page.category | downcase }}/">{{ page.category | replace: '-',' ' }}</a>
+                <a class="category" href="/{{ page.category | slugify }}">{{ page.category }}</a>
                 <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
 
                 <h1><a href="{{ page.url }}">{{ page.title | markdownify | remove: '<p>' | remove: '</p>' }}</a></h1>
@@ -35,7 +35,7 @@ type: post
                 <div class="related">
                     <h2>Related Articles</h2>
                     <ul>
-                    {% assign category = page.category | downcase %}
+                    {% assign category = page.category %}
                     {% for post in site.categories[category] limit:5 %}
                         <li>
                             <a class="post-link" href="{{ post.url }}">{{ post.title | markdownify | remove: '<p>' | remove: '</p>' }}</a>
