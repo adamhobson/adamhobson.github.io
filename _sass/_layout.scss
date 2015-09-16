@@ -425,12 +425,12 @@ article {
 #latest-posts,
 .featured {
     clear: both;
-    overflow: hidden;
 }
 
 .featured > h1 {
     @include modern-type;
-    margin: $vertical-unit / 2 - 1px 0 0;
+    margin: 0;
+    padding-top: $vertical-unit / 2 - 1px;
     border-bottom: 1px solid $grey-color-light;
     font-size: $base-font-size;
 }
