@@ -4,16 +4,17 @@ type: home
 ---
         <main id="home">
             <section id="latest-posts">
-            {% for post in site.posts limit:6 %}
+            {% for post in site.posts limit:7 %}
                 {% if forloop.first %}
                     {% include post_long.html %}
+                {% elsif forloop.last %}
+                <div class="short-summary">
+                    <br /><a class="more-posts" href="/archive#{{ post.url | slugify }}">Read More Posts &#8594;</a>
+                </div>
                 {% else %}
                     {% include post_short.html %}
                 {% endif %}
             {% endfor %}
-                <div class="short-summary">
-                    <br /><a class="more-posts" href="/archive">Read More Posts &#8594;</a>
-                </div>
             </section>
 
             {% for category in site.categories %}

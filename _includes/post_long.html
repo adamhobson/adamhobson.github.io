@@ -1,4 +1,4 @@
-<article class="post long-summary">
+<article class="post long-summary" id="{{ post.url | slugify }}">
     <header>                
         <a class="category" href="/{{ post.category | slugify }}">{{ post.category }}</a>
         <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %-d, %Y" }}</time>
