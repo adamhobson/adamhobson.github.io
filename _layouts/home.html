@@ -6,36 +6,13 @@ type: home
             <section id="latest-posts">
             {% for post in site.posts limit:6 %}
                 {% if forloop.first %}
-                <article class="post long-summary">
-                    <header>                
-                        <a class="category" href="/{{ post.category | slugify }}">{{ post.category }}</a>
-                        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %-d, %Y" }}</time>
-                        <h1><a href="{{ post.url }}">{{ post.title | markdownify | remove: '<p>' | remove: '</p>' }}</a></h1>
-                    </header>
-
-                    <div class="body">
-                        {% if post.thumb %}
-                        <img alt="{{ post.title }}" class="thumb" src="{{ post.thumb | prepend: '/posts/' | prepend: site.imgurl }}" />
-                        {% endif %}
-
-                        {{ post.excerpt | strip_html }}
-                        
-                        <a class="read-more" href="{{ post.url }}">Read more &#8594;</a>
-                    </div>
-                </article>
-                    {% else %}
-                <article class="post short-summary">
-                    {% if post.thumb %}
-                    <img alt="{{ post.title }}" class="thumb" src="{{ post.thumb | prepend: '/posts/' | prepend: site.imgurl }}" />
-                    {% endif %}
-                    <a class="category" href="/{{ post.category | slugify }}">{{ post.category }}</a>
-                    <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %-d, %Y" }}</time>
-                    <h1><a href="{{ post.url }}">{{ post.title | markdownify | remove: '<p>' | remove: '</p>' }}</a></h1>
-                </article>
+                    {% include post_long.html %}
+                {% else %}
+                    {% include post_short.html %}
                 {% endif %}
             {% endfor %}
                 <div class="short-summary">
-                    <br /><a class="more-posts" href="/">Read More Posts &#8594;</a>
+                    <br /><a class="more-posts" href="/archive">Read More Posts &#8594;</a>
                 </div>
             </section>
 
@@ -46,13 +23,7 @@ type: home
                 {% assign posts = category | last | where: 'featured', true %}
 
                 {% for post in posts limit:6 %}
-                <article class="post short-summary">
-                    {% if post.thumb %}
-                    <img alt="{{ post.title }}" class="thumb" src="{{ post.thumb | prepend: '/posts/' | prepend: site.imgurl }}" />
-                    {% endif %}
-                    <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %-d, %Y" }}</time>
-                    <h1><a href="{{ post.url }}">{{ post.title | markdownify | remove: '<p>' | remove: '</p>' }}</a></h1>
-                </article>
+                    {% include post_short.html category="false" %}
                 {% endfor %}
             </section>
             {% endfor %}

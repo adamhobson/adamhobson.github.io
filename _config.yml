@@ -14,6 +14,7 @@ gems:
   - jekyll-archives
   - jekyll-feed
   - jekyll-last-modified-at
+  - jekyll-paginate
   - jekyll-redirect-from
   - jekyll-sitemap
 

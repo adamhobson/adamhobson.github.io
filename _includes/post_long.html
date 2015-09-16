@@ -1,0 +1,17 @@
+<article class="post long-summary">
+    <header>                
+        <a class="category" href="/{{ post.category | slugify }}">{{ post.category }}</a>
+        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %-d, %Y" }}</time>
+        <h1><a href="{{ post.url }}">{{ post.title | markdownify | remove: '<p>' | remove: '</p>' }}</a></h1>
+    </header>
+
+    <div class="body">
+        {% if post.thumb %}
+        <img alt="{{ post.title }}" class="thumb" src="{{ post.thumb | prepend: '/posts/' | prepend: site.imgurl }}" />
+        {% endif %}
+
+        {{ post.excerpt | strip_html }}
+        
+        <a class="read-more" href="{{ post.url }}">Read more &#8594;</a>
+    </div>
+</article>

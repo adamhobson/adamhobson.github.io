@@ -435,8 +435,10 @@ article {
     font-size: $base-font-size;
 }
 
-/* Post & Page
+/* Archive, Post & Page
  *****************************************************************************/
+#archive,
+#page,
 #post {
     max-width: $horizontal-unit * 30;
     margin: $vertical-unit $horizontal-unit * 3;    
@@ -454,6 +456,10 @@ article {
             padding: 0 $horizontal-unit * 3;
         }
     }
+}
+
+#archive .long-summary {
+    margin-bottom: $vertical-unit * 2;
 }
 
 .related,

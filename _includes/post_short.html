@@ -1,0 +1,10 @@
+<article class="post short-summary">
+    {% if post.thumb %}
+    <img alt="{{ post.title }}" class="thumb" src="{{ post.thumb | prepend: '/posts/' | prepend: site.imgurl }}" />
+    {% endif %}
+    {% unless include.category %}
+    <a class="category" href="/{{ post.category | slugify }}">{{ post.category }}</a>
+    {% endunless %}
+    <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %-d, %Y" }}</time>
+    <h1><a href="{{ post.url }}">{{ post.title | markdownify | remove: '<p>' | remove: '</p>' }}</a></h1>
+</article>
