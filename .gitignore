@@ -1,8 +1,12 @@
 # Jekyll
-_site/
-_archive/
-.sass-cache/
-.jekyll-metadata
+src/_site/
+src/_archive/
+src/.sass-cache/
+src/.jekyll-metadata
+
+# Linked Content
+src/_drafts/
+src/_posts/
 
 # Mac
 .DS_Store
@@ -10,7 +14,3 @@ _archive/
 .LSOverride
 Icon
 ._*
-
-# Images
-images/
-
