@@ -1,4 +1,4 @@
-<article class="post short-summary">
+<article class="post short-summary" id="{{ post.url | slugify }}">
     {% if post.thumb %}
     <img alt="{{ post.title }}" class="thumb" src="{{ post.thumb | prepend: '/posts/' | prepend: site.imgurl }}" />
     {% endif %}
